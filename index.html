@@ -62,10 +62,11 @@
         }
 
         .hero-video-wrapper {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0; /* removes extra pixel space */
-}
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            /* removes extra pixel space */
+        }
 
 
         /* ABOUT SECTION */
@@ -114,7 +115,9 @@
             .slideshow-container {
                 height: 300px;
             }
+
         }
+
 
         /* TOUR OPTIONS */
         #tour-options {
@@ -542,7 +545,6 @@
         };
         scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // WhatsApp popup toggle
         const whatsappBtn = document.getElementById("whatsappBtn");
         const whatsappPopup = document.getElementById("whatsappPopup");
 
@@ -551,10 +553,16 @@
         }
 
         whatsappBtn.addEventListener("click", () => {
-            if (!isSmallScreen()) {
-                whatsappPopup.style.display = whatsappPopup.style.display === "block" ? "none" : "block";
+            if (isSmallScreen()) {
+                // Direct to chat on mobile
+                window.location.href = "https://wa.me/94763531637";
+            } else {
+                // Desktop popup toggle
+                whatsappPopup.style.display =
+                    whatsappPopup.style.display === "block" ? "none" : "block";
             }
         });
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
